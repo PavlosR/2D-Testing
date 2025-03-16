@@ -56,5 +56,5 @@
         "temp/": true,
         "Temp/": true
     },
-    "dotnet.defaultSolution": "2D testing.sln"
+    "dotnet.defaultSolution": "2D-Testing.sln"
 }
