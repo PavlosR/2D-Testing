@@ -1106,7 +1106,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!61 &1644493568
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1116,7 +1116,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 1644493564}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: cdb1928ecd787714aa0ad61d8c175b22, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -1164,6 +1164,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e6ac6a625b34756448b0a9bfd61c167a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Controller: {fileID: 0}
 --- !u!114 &1644493570
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1176,7 +1177,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 867a175e0bfc42449bfb816dd5a1ea35, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0
+  Horizontal: 0
+  Jump: 0
+  speed: 10
+  Jumper: 30
+  DashStrength: 0
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
