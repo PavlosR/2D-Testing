@@ -14,11 +14,12 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float speed;
     [SerializeField] private float Jumper = 5f;
     [SerializeField] private float DashStrength;
+    [SerializeField] private float DashTime;
 
     private Vector3 MoveForce;
     private Vector3 Velocity = Vector3.zero;
     private Vector2 JumpForce;
-    private Vector2 DashForce;
+    [SerializeField] private Vector2 DashForce;
     // Start is called before the first frame update
     void Start()
     {
@@ -28,7 +29,7 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     public void Move(float Horizontal, float Jump) 
@@ -42,16 +43,21 @@ public class PlayerController : MonoBehaviour
 
 
 
-        rgdBody.velocity = Vector3.SmoothDamp(rgdBody.velocity, MoveForce, ref Velocity, MovementSmoothing);
+        rgdBody.velocity = Vector3.SmoothDamp(rgdBody.velocity + DashForce, MoveForce, ref Velocity, MovementSmoothing);
         rgdBody.AddForce(JumpForce);
 
     }
 
     public void Dash(float Horizontal, float Vertical) 
     {
-        rgdBody.velocity = Vector2.zero;
-        DashForce = new Vector2(Horizontal, Vertical);
-        DashForce = DashForce.normalized * DashStrength;
-        rgdBody.AddForce(DashForce);
+        DashTime = 0f;
+        while(DashTime <= 1000f) {
+            DashForce = new Vector2(Horizontal, Vertical);
+            DashForce = DashForce.normalized * DashStrength;
+            //rgdBody.AddForce(DashForce);
+            DashTime += Time.deltaTime;
+
+        }
+            DashForce = Vector2.zero;
     }
 }

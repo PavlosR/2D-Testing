@@ -5,9 +5,9 @@ using UnityEngine;
 public class PlayerMove : MonoBehaviour
 {
 
-    private float Horizontal;
-    private float Jump;
-    private float Vertical;
+    [SerializeField] private float Horizontal;
+    [SerializeField] private float Jump;
+    [SerializeField] private float Vertical;
 
     private float CanDash;
 
