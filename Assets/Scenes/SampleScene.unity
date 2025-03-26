@@ -1164,6 +1164,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e6ac6a625b34756448b0a9bfd61c167a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Horizontal: 0
+  Jump: 0
+  Vertical: 0
   Controller: {fileID: 0}
 --- !u!114 &1644493570
 MonoBehaviour:
@@ -1182,7 +1185,9 @@ MonoBehaviour:
   MovementSmoothing: 0.05
   speed: 10
   Jumper: 350
-  DashStrength: 5000
+  DashStrength: 1
+  DashTime: 0
+  DashForce: {x: 0, y: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

@@ -29,7 +29,7 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        DashTime += Time.deltaTime;
     }
 
     public void Move(float Horizontal, float Jump) 
@@ -50,14 +50,11 @@ public class PlayerController : MonoBehaviour
 
     public void Dash(float Horizontal, float Vertical) 
     {
-        DashTime = 0f;
-        while(DashTime <= 1000f) {
+
             DashForce = new Vector2(Horizontal, Vertical);
             DashForce = DashForce.normalized * DashStrength;
-            //rgdBody.AddForce(DashForce);
-            DashTime += Time.deltaTime;
-
-        }
+            rgdBody.AddForce(DashForce);
+            DashTime += Time.fixedDeltaTime;
             DashForce = Vector2.zero;
     }
 }
