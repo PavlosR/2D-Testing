@@ -43,7 +43,7 @@ public class PlayerController : MonoBehaviour
 
 
 
-        rgdBody.velocity = Vector3.SmoothDamp(rgdBody.velocity + DashForce, MoveForce, ref Velocity, MovementSmoothing);
+        rgdBody.velocity = Vector3.SmoothDamp(rgdBody.velocity, MoveForce, ref Velocity, MovementSmoothing);
         rgdBody.AddForce(JumpForce);
 
     }
@@ -52,9 +52,9 @@ public class PlayerController : MonoBehaviour
     {
 
             DashForce = new Vector2(Horizontal, Vertical);
-            DashForce = DashForce.normalized * DashStrength;
-            rgdBody.AddForce(DashForce);
-            DashTime += Time.fixedDeltaTime;
-            DashForce = Vector2.zero;
+            //DashForce = DashForce.normalized * DashStrength;
+            //rgdBody.AddForce(DashForce);
+            //DashTime += Time.fixedDeltaTime;
+            //DashForce = Vector2.zero;
     }
 }
