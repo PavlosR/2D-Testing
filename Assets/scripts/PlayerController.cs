@@ -34,17 +34,15 @@ public class PlayerController : MonoBehaviour
 
     public void Move(float Horizontal, float Jump) 
     {
-        MoveForce = new Vector2(Horizontal * speed, 0f);
-        JumpForce = new Vector2(0.0f, Jump * Jumper);
+        MoveForce = new Vector2(Horizontal * speed, Jump * speed);
 
 
 
-        // /MoveForce = MoveForce.normalized * speed;
+        MoveForce = MoveForce.normalized * speed;
 
 
 
         rgdBody.velocity = Vector3.SmoothDamp(rgdBody.velocity, MoveForce, ref Velocity, MovementSmoothing);
-        rgdBody.AddForce(JumpForce);
 
     }
 
@@ -52,8 +50,8 @@ public class PlayerController : MonoBehaviour
     {
 
             DashForce = new Vector2(Horizontal, Vertical);
-            //DashForce = DashForce.normalized * DashStrength;
-            //rgdBody.AddForce(DashForce);
+            DashForce = DashForce.normalized * DashStrength;
+            rgdBody.AddForce(DashForce);
             //DashTime += Time.fixedDeltaTime;
             //DashForce = Vector2.zero;
     }

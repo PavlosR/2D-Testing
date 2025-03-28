@@ -1095,7 +1095,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 15
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -1167,6 +1167,8 @@ MonoBehaviour:
   Horizontal: 0
   Jump: 0
   Vertical: 0
+  Horizontal2: 0
+  Vertical2: 0
   Controller: {fileID: 0}
 --- !u!114 &1644493570
 MonoBehaviour:
@@ -1184,8 +1186,8 @@ MonoBehaviour:
   Jump: 0
   MovementSmoothing: 0.05
   speed: 10
-  Jumper: 350
-  DashStrength: 1
+  Jumper: 10
+  DashStrength: 3000
   DashTime: 0
   DashForce: {x: 0, y: 0}
 --- !u!1660057539 &9223372036854775807
